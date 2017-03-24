@@ -1,0 +1,27 @@
+using httpie
+
+http POST :3000/todos/2/items name='Listen to 5th Symphony' done=false
+
+http POST :3000/auth_user email="a@a.com" password="changeme"
+
+http POST :3000/users user.email="test@example.com" user.password="anewpassword" user.password_confirmation="anewpassword"
+
+curl -H "Content-Type: application/json" -X POST -d 'user: {"email": "test@example.com", "password": "anewpassword", "password_confirmation": "anewpassword"}' http://localhost:3000/users 
+
+ 'user: {"email": "test@example.com", "password": "anewpassword", "password_confirmation": "anewpassword"}'
+
+now response
+{"logged_in":true}
+
+git config --global user.email "deepesh.k@infogain.com"
+GIT_COMMITTER_EMAIL=deepesh.k@infogain.com 
+GIT_AUTHOR_EMAIL=deepesh.k@infogain.com 
+
+ssh-keygen -t rsa -b 4096 -C "deepesh.k@infogain.com"
+
+
+==========
+200: OK - Basically self-explanitory, the request went okay.
+401: Unauthorized - Authentication credentials were invalid.
+403: Forbidden - The resource requested is not accessible - in a Rails app, this would generally be based on permissions.
+404: Not Found - The resource doesn’t exist on the server.
